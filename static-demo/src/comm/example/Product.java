@@ -32,6 +32,10 @@ public class Product {
 				+ "]";
 	}
 	
-	
+	/*
+	 * public double discount(double discountPercentage) {
+	 * 
+	 * }
+	 */
 	
 }
