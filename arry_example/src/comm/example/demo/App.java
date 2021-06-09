@@ -47,6 +47,7 @@ public class App {
 			System.out.println("2. Pop.");
 			System.out.println("3. Search Item.");
 			System.out.println("4. Display the Stack");
+			System.out.println("5. Sort the Stack.");
 			System.out.println("0. Exit");
 			System.out.print("enter your choice");
 			choice=scanner.nextInt();
@@ -66,6 +67,13 @@ public class App {
 				break;
 			case 4:
 				int[] result=myStack.displayStack();
+				for(int i:result)
+				{
+					System.out.print(i+" ");
+				}
+				break;
+			case 5:
+				result=myStack.sortStack();
 				for(int i:result)
 				{
 					System.out.print(i+" ");
