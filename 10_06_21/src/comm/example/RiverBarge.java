@@ -1,6 +1,6 @@
 package comm.example;
 
-public class RiverBarge extends Vehicle{
+public class RiverBarge extends Vehicle implements Sailer{
 	private double startPoint;
 	private double endPoint;
 	private double distanceCovered;
@@ -38,6 +38,11 @@ public class RiverBarge extends Vehicle{
 	public void setMessage(String message) {
 		// TODO Auto-generated method stub
 		super.setMessage(message);
+	}
+
+	public void dock() {
+		System.out.println("Give RiverBarge Permission to Dock.");
+		
 	}
 	
 }
