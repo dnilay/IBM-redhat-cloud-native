@@ -31,6 +31,7 @@ public class Tester {
 			try {
 				System.out.println("1. Add A New Beer.");
 				System.out.println("2. Display All Available Beer.");
+				System.out.println("3. Fidn A Beer.");
 				System.out.println("0. Quit");
 				System.out.print("Enter Your choice: ");
 				choice=scanner.nextInt();
@@ -52,6 +53,19 @@ public class Tester {
 						System.out.println(b);
 					}
 
+					break;
+				case 3:
+					System.out.print("Enter beer id: ");
+					int id=scanner.nextInt();
+					Beer beer=tester.map.get(id);
+					if(beer==null)
+					{
+						System.out.println("no beer found with the id: "+id);
+					}
+					else
+					{
+						System.out.println("Beer Found\n"+beer);
+					}
 					break;
 				case 0:
 					System.out.println(tester.map);
