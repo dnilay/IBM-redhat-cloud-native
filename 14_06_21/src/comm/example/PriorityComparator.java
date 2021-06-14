@@ -2,6 +2,7 @@ package comm.example;
 
 import java.util.Comparator;
 
+@SuppressWarnings("rawtypes")
 public class PriorityComparator implements Comparator {
 
 	@Override
