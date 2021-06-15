@@ -48,8 +48,7 @@ public class Tester {
 			}
 		}
 		for (Todo t : set) {
-			System.out.println(t);
-
+			System.out.printf("%s %s %d", t.getTodoId(),t.getDesc(),t.getPriority());
 		}
 	}
 }
