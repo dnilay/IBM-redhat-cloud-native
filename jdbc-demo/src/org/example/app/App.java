@@ -8,8 +8,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import org.example.dao.EmployeeDao;
-import org.example.dao.EmployeeDaoImpl;
 import org.example.model.Employee;
 import org.example.service.EmployeeService;
 import org.example.service.EmployeeServiceImpl;
@@ -25,6 +23,7 @@ public class App {
 
 			System.out.println("1. Create a new employee");
 			System.out.println("2. display all available employees");
+			System.out.println("3. find employee by id");
 			System.out.println("0. exit");
 			System.out.print("enter your choice: ");
 			choice = Integer.parseInt(bufferedReader.readLine());
@@ -33,7 +32,7 @@ public class App {
 			case 1:
 				System.out.print("enter first name: ");
 				firstName = bufferedReader.readLine();
-				System.out.print("enter last name");
+				System.out.print("enter last name: ");
 				lastName = bufferedReader.readLine();
 				System.out.print("enter email: ");
 				email = bufferedReader.readLine();
@@ -46,6 +45,22 @@ public class App {
 				Iterator<Employee> iterator = employees.iterator();
 				while (iterator.hasNext())
 					System.out.println(iterator.next());
+				break;
+			case 3:
+				System.out.print("enter id: ");
+				Integer id = Integer.parseInt(bufferedReader.readLine());
+				List<Employee> list=service.findById(id);
+				if(list.isEmpty())
+				{
+					System.out.println("NO such record found with id: "+id);
+				}
+				else
+				{
+					for(Employee e:list)
+					{
+						System.out.println(e);
+					}
+				}
 				break;
 			case 0:
 				System.out.println("Bye!");

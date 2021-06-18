@@ -11,8 +11,6 @@ import java.util.List;
 import org.example.factory.MyConnectionFactory;
 import org.example.model.Employee;
 
-import com.mysql.cj.xdevapi.Result;
-
 public class EmployeeDaoImpl implements EmployeeDao {
 	private List<Employee> list;
 	private MyConnectionFactory myConnectionFactory;
@@ -51,6 +49,21 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		{
 			list.add(new Employee(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), 
 					resultSet.getString(4)));
+		}
+		
+		return list;
+	}
+
+	@Override
+	public List<Employee> findById(Integer id)throws SQLException {
+		list=new ArrayList<Employee>();
+		PreparedStatement preparedStatement=connection.prepareStatement("select * from employee where id=?");
+		preparedStatement.setInt(1, id);
+		ResultSet resultSet=preparedStatement.executeQuery();
+		while(resultSet.next())
+		{
+			list.add(new Employee(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4)));
+			
 		}
 		
 		return list;
