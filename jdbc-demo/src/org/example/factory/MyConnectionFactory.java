@@ -12,7 +12,7 @@ public class MyConnectionFactory {
 	
 	private MyConnectionFactory() throws SQLException
 	{
-		connection=DriverManager.getConnection("jdbc:mysql://localhost:3307/todos","user1","pass1");
+		connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/hr","user1","pass1");
 	}
 	
 	

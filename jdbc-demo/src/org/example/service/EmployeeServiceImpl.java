@@ -19,7 +19,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Override
 	public Employee createEmployee(Employee employee) throws SQLException {
 		// TODO Auto-generated method stub
-		return null;
+		return employeeDao.createEmployee(employee);
 	}
 
 	@Override
