@@ -1,18 +1,20 @@
-package org.example.model;
+package org.example.demo.model;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
 @Setter
+@Getter
 @ToString
-public class Employee {
-	private Integer id;
-	private String firstName;
-	private String lastName;
-	private String email;
+public class Address {
+	private String addressLine1;
+	private String addressLine2;
+	private City city;
+	
 
 }
