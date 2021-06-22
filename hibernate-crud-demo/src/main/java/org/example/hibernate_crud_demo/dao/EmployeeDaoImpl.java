@@ -72,9 +72,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		tempEmployee.setLastName(lastName);
 		tempEmployee.setEmail(email);
 		session.getTransaction().begin();
+		//merge for update an existing entity
 		session.merge(tempEmployee);
 		session.getTransaction().commit();
+		
 		return tempEmployee;
+		
 		
 	}
 
