@@ -1,4 +1,4 @@
-package org.example.demo.mode;
+package org.example.demo.model;
 
 public enum Status {
 

@@ -1,4 +1,4 @@
-package org.example.demo.mode;
+package org.example.demo.model;
 
 import java.util.HashSet;
 import java.util.Set;

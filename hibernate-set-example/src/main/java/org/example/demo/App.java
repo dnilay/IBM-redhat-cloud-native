@@ -3,12 +3,11 @@ package org.example.demo;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import org.example.demo.mode.Status;
-import org.example.demo.mode.Student;
+import org.example.demo.model.Status;
+import org.example.demo.model.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
 public class App {
 	private static Logger logger = Logger.getLogger("org.example.demo.App.class");
 
@@ -18,7 +17,6 @@ public class App {
 			SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student.class)
 					.buildSessionFactory();
 			Session session = factory.getCurrentSession();
-
 			Student student = new Student();
 			student.setFirstName("Marry");
 			student.setLastName("Public");
