@@ -2,16 +2,12 @@ package org.example.demo;
 
 import java.util.logging.Logger;
 
+import org.example.demo.model.Course;
 import org.example.demo.model.Instructor;
 import org.example.demo.model.InstructorDetails;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
-/**
- * Hello world!
- *
- */
 
 public class App {
 	public static void main(String[] args) {
@@ -20,16 +16,30 @@ public class App {
 
 			SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
 					.addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetails.class)
+					.addAnnotatedClass(Course.class)
 					.buildSessionFactory();
 			Session session = factory.getCurrentSession();
+
+			Instructor instructor = new Instructor();
+			InstructorDetails details = new InstructorDetails();
+			details.setHobby("Singing");
+			details.setYoutubeChannel("channel-1");
+			instructor.setFirstName("John");
+			instructor.setLastName("Doe");
+			instructor.setEmail("john@email.com");
+			instructor.setInstructorDetails(details);
+			session.getTransaction().begin();
+
+			Course course1 = new Course();
+			course1.setCourseName("Java");
+			instructor.add(course1);
+			Course course2 = new Course();
+
+			course2.setCourseName("Angular");
+			instructor.add(course2);
+			session.persist(instructor);
+			session.getTransaction().commit();
 			/*
-			 * Instructor instructor=new Instructor(); InstructorDetails details=new
-			 * InstructorDetails(); details.setHobby("Singing");
-			 * details.setYoutubeChannel("channel-1"); instructor.setFirstName("John");
-			 * instructor.setLastName("Doe"); instructor.setEmail("john@email.com");
-			 * instructor.setInstructorDetails(details); session.getTransaction().begin();
-			 * session.persist(instructor); session.getTransaction().commit();
-			 * 
 			 * session.getTransaction().begin(); Instructor
 			 * instructor=session.get(Instructor.class, 1);
 			 * 
@@ -41,20 +51,16 @@ public class App {
 			 * 
 			 * session.delete(instructor); session.getTransaction().commit();
 			 * System.out.println("done");
+			 * 
+			 * InstructorDetails details = new InstructorDetails();
+			 * details.setHobby("Singing"); details.setYoutubeChannel("channel-1");
+			 * Instructor instructor = new Instructor(); instructor.setFirstName("John");
+			 * instructor.setLastName("doe"); instructor.setEmail("john@email.com");
+			 * details.setInstructor(instructor); instructor.setInstructorDetails(details);
+			 * session.getTransaction().begin(); session.persist(details);
+			 * session.persist(instructor); session.getTransaction().commit();
+			 * logger.info("done");
 			 */
-			InstructorDetails details = new InstructorDetails();
-			details.setHobby("Singing");
-			details.setYoutubeChannel("channel-1");
-			Instructor instructor = new Instructor();
-			instructor.setFirstName("John");
-			instructor.setLastName("doe");
-			instructor.setEmail("john@email.com");
-			details.setInstructor(instructor);
-			instructor.setInstructorDetails(details);
-			session.getTransaction().begin();
-			session.persist(details);
-			session.persist(instructor);
-			session.getTransaction().commit();
 			logger.info("done");
 
 		} catch (Exception e) {
