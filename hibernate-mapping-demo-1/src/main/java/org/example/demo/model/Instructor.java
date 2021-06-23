@@ -45,7 +45,7 @@ public class Instructor {
 	})
 
 	private InstructorDetails instructorDetails;
-	@OneToMany(cascade = {
+	@OneToMany(mappedBy = "instructor", cascade = {
 			CascadeType.DETACH,
 			CascadeType.MERGE,
 			CascadeType.PERSIST,

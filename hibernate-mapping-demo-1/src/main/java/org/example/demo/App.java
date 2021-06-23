@@ -1,10 +1,13 @@
 package org.example.demo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.example.demo.model.Course;
 import org.example.demo.model.Instructor;
 import org.example.demo.model.InstructorDetails;
+import org.example.demo.model.People;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -16,8 +19,7 @@ public class App {
 
 			SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
 					.addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetails.class)
-					.addAnnotatedClass(Course.class)
-					.buildSessionFactory();
+					.addAnnotatedClass(Course.class).addAnnotatedClass(People.class).buildSessionFactory();
 			Session session = factory.getCurrentSession();
 
 			Instructor instructor = new Instructor();
@@ -37,20 +39,31 @@ public class App {
 
 			course2.setCourseName("Angular");
 			instructor.add(course2);
+			People people1 = new People();
+			people1.setFirstName("p1");
+			people1.setLastname("q1");
+			people1.setEmail("r1");
 			session.persist(instructor);
+			List<Course> list = new ArrayList<Course>();
+			list.add(course1);
+			list.add(course2);
+			people1.setCourses(list);
+			session.persist(people1);
 			session.getTransaction().commit();
+
 			/*
-			 * session.getTransaction().begin(); Instructor
-			 * instructor=session.get(Instructor.class, 1);
+			 * session.getTransaction().begin();
 			 * 
-			 * InstructorDetails details=instructor.getInstructorDetails();
+			 * Instructor instructor = session.get(Instructor.class, 1);
+			 * 
+			 * InstructorDetails details = instructor.getInstructorDetails();
 			 * details.setHobby("Cricket"); details.setYoutubeChannel("my-channel-1");
 			 * instructor.setEmail("john1@email.com"); session.merge(instructor);
 			 * session.getTransaction().commit();
 			 * 
-			 * 
 			 * session.delete(instructor); session.getTransaction().commit();
 			 * System.out.println("done");
+			 * 
 			 * 
 			 * InstructorDetails details = new InstructorDetails();
 			 * details.setHobby("Singing"); details.setYoutubeChannel("channel-1");
