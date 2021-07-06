@@ -33,4 +33,13 @@ public class BookDaoImpl implements BookDao{
 		return bookMap.values();
 	}
 
+
+
+	@Override
+	public Book createBook(Book book) {
+		book.setBookId(UUID.randomUUID().toString());
+		bookMap.put(new Random().nextInt(1000), book);
+		return book;
+	}
+
 }

@@ -26,4 +26,12 @@ public class BookServiceImpl implements BookService {
 		return bookDaoImpl.displayAllBook();
 	}
 
+
+
+	@Override
+	public Book createBook(Book book) {
+		// TODO Auto-generated method stub
+		return bookDaoImpl.createBook(book);
+	}
+
 }
