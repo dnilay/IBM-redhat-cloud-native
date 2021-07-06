@@ -11,6 +11,4 @@ mongoose.connect('mongodb://localhost/vidly')
 app.use(express.json());
 app.use('/api/genres', genres);
 app.use('/api/customers', customers);
-
-
 app.listen(3000);
