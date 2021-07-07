@@ -75,4 +75,14 @@ public class BookDaoImpl implements BookDao{
 		entityManager.merge(book1);
 		return book1;
 	}
+
+	@Override
+	@Transactional
+	public String deleteByBookId(String bookId) {
+		// TODO Auto-generated method stub
+		
+		Book book=getByBookId(bookId);
+		entityManager.remove(book);
+		return "deleted sucessfully";
+	}
 }

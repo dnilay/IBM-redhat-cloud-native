@@ -51,4 +51,10 @@ public class BookServiceImpl implements BookService {
 		return bookDao.updateBookByBookId(bookId, book);
 	}
 
+	@Override
+	public String deleteByBookId(String bookId) {
+		
+		return bookDao.deleteByBookId(bookId);
+	}
+
 }
