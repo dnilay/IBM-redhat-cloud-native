@@ -32,4 +32,10 @@ public class BookServiceImpl implements BookService {
 		return bookDao.getAllBook();
 	}
 
+	@Override
+	public Book getBookById(Integer id) {
+		// TODO Auto-generated method stub
+		return bookDao.getBookById(id);
+	}
+
 }
