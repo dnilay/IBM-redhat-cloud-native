@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,8 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public Book createBook(Book book) {
 		// TODO Auto-generated method stub
-		return null;
+		book.setBookId(UUID.randomUUID().toString());
+		return bookDao.createBook(book);
 	}
 
 	@Override
