@@ -45,4 +45,10 @@ public class BookServiceImpl implements BookService {
 		return bookDao.getByBookId(id);
 	}
 
+	@Override
+	public Book updateBookByBookId(String bookId,Book book) {
+		// TODO Auto-generated method stub
+		return bookDao.updateBookByBookId(bookId, book);
+	}
+
 }

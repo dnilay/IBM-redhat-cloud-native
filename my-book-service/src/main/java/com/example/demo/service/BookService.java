@@ -9,5 +9,5 @@ public interface BookService {
 	public List<Book> getAllBook();
 	public Book getBookById(Integer id);
 	public Book getByBookId(String id);
-
+	public Book updateBookByBookId(String bookId,Book book);
 }

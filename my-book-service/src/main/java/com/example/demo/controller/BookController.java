@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -66,4 +67,10 @@ public class BookController {
 		return ResponseEntity.status(HttpStatus.OK).body(bookService.getByBookId(bookId));
 	}
 
+	@PutMapping("/api/books/{bookId}")
+	public ResponseEntity<Book> updateBookByBookId(@PathVariable("bookId") String bookId,@RequestBody Book book)
+	{
+		Book book2=bookService.updateBookByBookId(bookId, book);
+		return ResponseEntity.status(HttpStatus.OK).body(book2);
+	}
 }
