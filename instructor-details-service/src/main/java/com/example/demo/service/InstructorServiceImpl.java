@@ -1,5 +1,8 @@
 package com.example.demo.service;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,4 +26,13 @@ public class InstructorServiceImpl implements InstructorService{
 		return instructorDao.save(instructor);
 	}
 
+
+	@Override
+	public List<Instructor> getAllInstructor() {
+	List<Instructor> i=instructorDao.findAll();
+
+	
+	
+return i;
+}
 }
