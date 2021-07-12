@@ -11,3 +11,8 @@ spring:
     user:
       name: user1
       password: pass1234
+  boot:
+    admin:
+      client:
+        url: http://admin:admin@localhost:8888/
+  
