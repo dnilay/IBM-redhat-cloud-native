@@ -32,4 +32,11 @@ public class Item {
 	@Column(name = "available")
 	private Boolean isAvailable;
 
+	public Item(String itemNumber, String itemName, Double itemPrice, Boolean isAvailable) {
+		super();
+		this.itemNumber = itemNumber;
+		this.itemName = itemName;
+		this.itemPrice = itemPrice;
+		this.isAvailable = isAvailable;
+	}
 }
