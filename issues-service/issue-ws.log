@@ -1210,3 +1210,382 @@ Caused by: java.lang.IllegalStateException: Multiple Dockets with the same group
 2021-07-13 10:46:55.196  INFO 9068 --- [http-nio-8082-exec-2] c.example.demo.service.IssueServiceImpl  : within display issue service
 2021-07-13 10:46:55.255  INFO 9068 --- [http-nio-8082-exec-2] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:52}] to localhost:27017
 2021-07-13 10:47:35.110  INFO 9068 --- [http-nio-8082-exec-4] c.example.demo.service.IssueServiceImpl  : within create issue service
+2021-07-13 10:51:02.826  INFO 9068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-13 10:56:02.830  INFO 9068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-13 11:01:02.846  INFO 9068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-13 11:06:02.861  INFO 9068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-13 11:10:21.537  INFO 9068 --- [RMI TCP Connection(33)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-07-13 11:10:21.539  INFO 9068 --- [RMI TCP Connection(33)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ISSUE-SERVIE with eureka with status DOWN
+2021-07-13 11:10:21.539  INFO 9068 --- [RMI TCP Connection(33)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1626154821539, current=DOWN, previous=UP]
+2021-07-13 11:10:21.539  INFO 9068 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082: registering service...
+2021-07-13 11:10:21.584  INFO 9068 --- [RMI TCP Connection(33)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:52}] to localhost:27017 because the pool has been closed.
+2021-07-13 11:10:21.587  INFO 9068 --- [RMI TCP Connection(33)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2021-07-13 11:10:24.610  INFO 9068 --- [RMI TCP Connection(33)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2021-07-13 11:10:25.647  INFO 9068 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://user1:pass1234@localhost:8761/eureka/} exception=I/O error on POST request for "http://user1:pass1234@localhost:8761/eureka/apps/ISSUE-SERVIE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://user1:pass1234@localhost:8761/eureka/apps/ISSUE-SERVIE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:109)
+	at org.springframework.http.client.support.BasicAuthenticationInterceptor.intercept(BasicAuthenticationInterceptor.java:79)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:93)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:77)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 21 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 40 more
+
+2021-07-13 11:10:25.649  WARN 9068 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://user1:pass1234@localhost:8761/eureka/apps/ISSUE-SERVIE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2021-07-13 13:00:46.638  INFO 15120 --- [restartedMain] c.example.demo.IssuesServiceApplication  : Starting IssuesServiceApplication using Java 15.0.2 on DESKTOP-BKHCO08 with PID 15120 (C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service\target\classes started by nilay in C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service)
+2021-07-13 13:00:46.642  INFO 15120 --- [restartedMain] c.example.demo.IssuesServiceApplication  : No active profile set, falling back to default profiles: default
+2021-07-13 13:00:46.735  INFO 15120 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-13 13:00:46.736  INFO 15120 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-13 13:00:48.937  INFO 15120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-07-13 13:00:49.348  INFO 15120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 395 ms. Found 1 MongoDB repository interfaces.
+2021-07-13 13:00:49.789  INFO 15120 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f7b7b508-bd08-389d-aa3e-b80124254285
+2021-07-13 13:00:50.753  INFO 15120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2021-07-13 13:00:50.773  INFO 15120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-13 13:00:50.774  INFO 15120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-13 13:00:51.030  INFO 15120 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-13 13:00:51.031  INFO 15120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4294 ms
+2021-07-13 13:00:51.542  INFO 15120 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-07-13 13:00:51.630  INFO 15120 --- [cluster-rtt-ClusterId{value='60ed412b98d96b4da1c9941e', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:54}] to localhost:27017
+2021-07-13 13:00:51.630  INFO 15120 --- [cluster-ClusterId{value='60ed412b98d96b4da1c9941e', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:53}] to localhost:27017
+2021-07-13 13:00:51.631  INFO 15120 --- [cluster-ClusterId{value='60ed412b98d96b4da1c9941e', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=25623000}
+2021-07-13 13:00:51.760  WARN 15120 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-13 13:00:51.990  WARN 15120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2021-07-13 13:00:52.054  WARN 15120 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-13 13:00:53.118  INFO 15120 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-07-13 13:00:53.224  INFO 15120 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-13 13:00:54.213  INFO 15120 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2021-07-13 13:00:54.289  WARN 15120 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2021-07-13 13:00:54.447  INFO 15120 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2021-07-13 13:00:54.540  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2021-07-13 13:00:54.553  INFO 15120 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-13 13:00:54.616  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2021-07-13 13:00:54.616  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2021-07-13 13:00:54.616  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2021-07-13 13:00:54.616  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2021-07-13 13:00:54.616  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2021-07-13 13:00:54.616  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2021-07-13 13:00:54.617  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2021-07-13 13:00:55.594  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2021-07-13 13:00:55.604  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2021-07-13 13:00:55.613  INFO 15120 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-07-13 13:00:55.629  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1626161455628 with initial instances count: 0
+2021-07-13 13:00:55.630  INFO 15120 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ISSUE-SERVIE with eureka with status UP
+2021-07-13 13:00:55.631  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1626161455631, current=UP, previous=STARTING]
+2021-07-13 13:00:55.633  INFO 15120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082: registering service...
+2021-07-13 13:00:55.672  INFO 15120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2021-07-13 13:00:55.674  INFO 15120 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2021-07-13 13:00:55.905  INFO 15120 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-07-13 13:00:55.939  INFO 15120 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-07-13 13:00:55.994  INFO 15120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082 - registration status: 204
+2021-07-13 13:00:56.063  INFO 15120 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-07-13 13:00:56.396  INFO 15120 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2021-07-13 13:00:56.404  INFO 15120 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2021-07-13 13:00:56.476  INFO 15120 --- [restartedMain] c.example.demo.IssuesServiceApplication  : Started IssuesServiceApplication in 10.69 seconds (JVM running for 12.125)
+2021-07-13 13:01:00.618  WARN 15120 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=issue-servie, managementUrl=http://DESKTOP-BKHCO08.mshome.net:8082/actuator, healthUrl=http://DESKTOP-BKHCO08.mshome.net:8082/actuator/health, serviceUrl=http://DESKTOP-BKHCO08.mshome.net:8082/) at spring-boot-admin ([http://admin:admin@localhost:8888//instances]): I/O error on POST request for "http://admin:admin@localhost:8888/instances": Connect to localhost:8888 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8888 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information. Further attempts are logged on DEBUG level
+2021-07-13 13:01:10.208  INFO 15120 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-13 13:01:10.208  INFO 15120 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-13 13:01:10.211  INFO 15120 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-13 13:01:10.243  INFO 15120 --- [http-nio-8082-exec-1] c.example.demo.service.IssueServiceImpl  : within display issue service
+2021-07-13 13:01:10.313  INFO 15120 --- [http-nio-8082-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:55}] to localhost:27017
+2021-07-13 13:01:24.672  WARN 15120 --- [http-nio-8082-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.example.demo.exception.IssueNotFoundException: isue with the given id not found.]
+2021-07-13 13:01:25.608  INFO 15120 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2021-07-13 13:01:25.609  INFO 15120 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2021-07-13 13:01:25.611  INFO 15120 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2021-07-13 13:01:25.611  INFO 15120 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2021-07-13 13:01:25.612  INFO 15120 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2021-07-13 13:01:25.612  INFO 15120 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2021-07-13 13:01:25.612  INFO 15120 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2021-07-13 13:01:25.632  INFO 15120 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2021-07-13 13:02:05.159  INFO 15120 --- [http-nio-8082-exec-4] c.example.demo.service.IssueServiceImpl  : updated
+2021-07-13 13:02:22.662  WARN 15120 --- [http-nio-8082-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.example.demo.exception.IssueNotFoundException: isue with the given id not found.]
+2021-07-13 13:04:05.011  INFO 15120 --- [Thread-1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ISSUE-SERVIE with eureka with status DOWN
+2021-07-13 13:04:05.012  INFO 15120 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1626161645012, current=DOWN, previous=UP]
+2021-07-13 13:04:05.013  INFO 15120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082: registering service...
+2021-07-13 13:04:05.021  INFO 15120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082 - registration status: 204
+2021-07-13 13:04:05.066  INFO 15120 --- [Thread-1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:55}] to localhost:27017 because the pool has been closed.
+2021-07-13 13:04:05.071  INFO 15120 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2021-07-13 13:04:08.135  INFO 15120 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2021-07-13 13:04:08.146  INFO 15120 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082 - deregister  status: 200
+2021-07-13 13:04:08.219  INFO 15120 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2021-07-13 13:04:08.566  INFO 15120 --- [restartedMain] c.example.demo.IssuesServiceApplication  : Starting IssuesServiceApplication using Java 15.0.2 on DESKTOP-BKHCO08 with PID 15120 (C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service\target\classes started by nilay in C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service)
+2021-07-13 13:04:08.567  INFO 15120 --- [restartedMain] c.example.demo.IssuesServiceApplication  : No active profile set, falling back to default profiles: default
+2021-07-13 13:04:09.317  INFO 15120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-07-13 13:04:09.329  INFO 15120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 MongoDB repository interfaces.
+2021-07-13 13:04:09.434  INFO 15120 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f7b7b508-bd08-389d-aa3e-b80124254285
+2021-07-13 13:04:09.533  INFO 15120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2021-07-13 13:04:09.535  INFO 15120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-13 13:04:09.535  INFO 15120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-13 13:04:09.634  INFO 15120 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-13 13:04:09.634  INFO 15120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1057 ms
+2021-07-13 13:04:09.715  INFO 15120 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-07-13 13:04:09.720  INFO 15120 --- [cluster-ClusterId{value='60ed41f198d96b4da1c9941f', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:56}] to localhost:27017
+2021-07-13 13:04:09.721  INFO 15120 --- [cluster-ClusterId{value='60ed41f198d96b4da1c9941f', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1960500}
+2021-07-13 13:04:09.723  INFO 15120 --- [cluster-rtt-ClusterId{value='60ed41f198d96b4da1c9941f', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:57}] to localhost:27017
+2021-07-13 13:04:09.726  WARN 15120 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-13 13:04:09.752  WARN 15120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2021-07-13 13:04:09.769  WARN 15120 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-13 13:04:09.785  WARN 15120 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'issueController' defined in file [C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service\target\classes\com\example\demo\controller\IssueController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'issueServiceImpl' defined in file [C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service\target\classes\com\example\demo\service\IssueServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'issueRepository' defined in com.example.demo.repo.IssueRepository defined in @EnableMongoRepositories declared on MongoRepositoriesRegistrar.EnableMongoRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.Error: Unresolved compilation problems: 
+	Syntax error, insert ";" to complete FieldDeclaration
+	Return type for the method is missing
+
+2021-07-13 13:04:09.786  INFO 15120 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-13 13:04:09.807  INFO 15120 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-13 13:04:09.851 ERROR 15120 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'issueController' defined in file [C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service\target\classes\com\example\demo\controller\IssueController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'issueServiceImpl' defined in file [C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service\target\classes\com\example\demo\service\IssueServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'issueRepository' defined in com.example.demo.repo.IssueRepository defined in @EnableMongoRepositories declared on MongoRepositoriesRegistrar.EnableMongoRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.Error: Unresolved compilation problems: 
+	Syntax error, insert ";" to complete FieldDeclaration
+	Return type for the method is missing
+
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.8.jar:2.4.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:771) ~[spring-boot-2.4.8.jar:2.4.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:763) ~[spring-boot-2.4.8.jar:2.4.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:438) ~[spring-boot-2.4.8.jar:2.4.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.8.jar:2.4.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.8.jar:2.4.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1318) ~[spring-boot-2.4.8.jar:2.4.8]
+	at com.example.demo.IssuesServiceApplication.main(IssuesServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.8.jar:2.4.8]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'issueServiceImpl' defined in file [C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service\target\classes\com\example\demo\service\IssueServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'issueRepository' defined in com.example.demo.repo.IssueRepository defined in @EnableMongoRepositories declared on MongoRepositoriesRegistrar.EnableMongoRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.Error: Unresolved compilation problems: 
+	Syntax error, insert ";" to complete FieldDeclaration
+	Return type for the method is missing
+
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'issueRepository' defined in com.example.demo.repo.IssueRepository defined in @EnableMongoRepositories declared on MongoRepositoriesRegistrar.EnableMongoRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.Error: Unresolved compilation problems: 
+	Syntax error, insert ";" to complete FieldDeclaration
+	Return type for the method is missing
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 39 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	Syntax error, insert ";" to complete FieldDeclaration
+	Return type for the method is missing
+
+	at com.example.demo.repo.IssueRepository.<clinit>(IssueRepository.java:12) ~[classes/:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:377) ~[na:na]
+	at com.sun.proxy.$Proxy162.<clinit>(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at java.base/java.lang.reflect.Proxy.newProxyInstance(Proxy.java:1022) ~[na:na]
+	at java.base/java.lang.reflect.Proxy.newProxyInstance(Proxy.java:1008) ~[na:na]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.getProxy(JdkDynamicAopProxy.java:126) ~[spring-aop-5.3.8.jar:5.3.8]
+	at org.springframework.aop.framework.ProxyFactory.getProxy(ProxyFactory.java:110) ~[spring-aop-5.3.8.jar:5.3.8]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:309) ~[spring-data-commons-2.4.10.jar:2.4.10]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:323) ~[spring-data-commons-2.4.10.jar:2.4.10]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:230) ~[spring-data-commons-2.4.10.jar:2.4.10]
+	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-2.4.10.jar:2.4.10]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329) ~[spring-data-commons-2.4.10.jar:2.4.10]
+	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean.afterPropertiesSet(MongoRepositoryFactoryBean.java:119) ~[spring-data-mongodb-3.1.10.jar:3.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 50 common frames omitted
+
+2021-07-13 13:04:13.633  INFO 15120 --- [restartedMain] c.example.demo.IssuesServiceApplication  : Starting IssuesServiceApplication using Java 15.0.2 on DESKTOP-BKHCO08 with PID 15120 (C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service\target\classes started by nilay in C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service)
+2021-07-13 13:04:13.633  INFO 15120 --- [restartedMain] c.example.demo.IssuesServiceApplication  : No active profile set, falling back to default profiles: default
+2021-07-13 13:04:14.234  INFO 15120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-07-13 13:04:14.245  INFO 15120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 1 MongoDB repository interfaces.
+2021-07-13 13:04:14.333  INFO 15120 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f7b7b508-bd08-389d-aa3e-b80124254285
+2021-07-13 13:04:14.428  INFO 15120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2021-07-13 13:04:14.429  INFO 15120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-13 13:04:14.429  INFO 15120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-13 13:04:14.464  INFO 15120 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-07-13 13:04:14.464  INFO 15120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 828 ms
+2021-07-13 13:04:14.530  INFO 15120 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-07-13 13:04:14.534  INFO 15120 --- [cluster-ClusterId{value='60ed41f698d96b4da1c99420', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:59}] to localhost:27017
+2021-07-13 13:04:14.534  INFO 15120 --- [cluster-rtt-ClusterId{value='60ed41f698d96b4da1c99420', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:58}] to localhost:27017
+2021-07-13 13:04:14.534  INFO 15120 --- [cluster-ClusterId{value='60ed41f698d96b4da1c99420', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1523800}
+2021-07-13 13:04:14.538  WARN 15120 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-13 13:04:14.573  WARN 15120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2021-07-13 13:04:14.587  WARN 15120 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-13 13:04:15.070  INFO 15120 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-07-13 13:04:15.094  INFO 15120 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-13 13:04:15.450  INFO 15120 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2021-07-13 13:04:15.489  WARN 15120 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2021-07-13 13:04:15.564  INFO 15120 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2021-07-13 13:04:15.596  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2021-07-13 13:04:15.596  INFO 15120 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-13 13:04:15.612  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2021-07-13 13:04:15.612  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2021-07-13 13:04:15.612  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2021-07-13 13:04:15.612  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2021-07-13 13:04:15.612  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2021-07-13 13:04:15.612  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2021-07-13 13:04:15.612  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2021-07-13 13:04:15.776  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2021-07-13 13:04:15.783  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2021-07-13 13:04:15.788  INFO 15120 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-07-13 13:04:15.804  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1626161655804 with initial instances count: 1
+2021-07-13 13:04:15.805  INFO 15120 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ISSUE-SERVIE with eureka with status UP
+2021-07-13 13:04:15.805  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1626161655805, current=UP, previous=STARTING]
+2021-07-13 13:04:15.805  INFO 15120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082: registering service...
+2021-07-13 13:04:15.810  INFO 15120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2021-07-13 13:04:15.812  INFO 15120 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2021-07-13 13:04:15.986  INFO 15120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082 - registration status: 204
+2021-07-13 13:04:16.035  INFO 15120 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-07-13 13:04:16.037  INFO 15120 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-07-13 13:04:16.046  INFO 15120 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-07-13 13:04:16.164  INFO 15120 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2021-07-13 13:04:16.168  INFO 15120 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2021-07-13 13:04:16.194  INFO 15120 --- [restartedMain] c.example.demo.IssuesServiceApplication  : Started IssuesServiceApplication in 2.781 seconds (JVM running for 211.843)
+2021-07-13 13:04:16.200  INFO 15120 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-13 13:04:20.321  WARN 15120 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=issue-servie, managementUrl=http://DESKTOP-BKHCO08.mshome.net:8082/actuator, healthUrl=http://DESKTOP-BKHCO08.mshome.net:8082/actuator/health, serviceUrl=http://DESKTOP-BKHCO08.mshome.net:8082/) at spring-boot-admin ([http://admin:admin@localhost:8888//instances]): I/O error on POST request for "http://admin:admin@localhost:8888/instances": Connect to localhost:8888 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8888 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information. Further attempts are logged on DEBUG level
+2021-07-13 13:05:07.372  INFO 15120 --- [Thread-7] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ISSUE-SERVIE with eureka with status DOWN
+2021-07-13 13:05:07.373  INFO 15120 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1626161707372, current=DOWN, previous=UP]
+2021-07-13 13:05:07.373  INFO 15120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082: registering service...
+2021-07-13 13:05:07.389  INFO 15120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082 - registration status: 204
+2021-07-13 13:05:07.432  INFO 15120 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2021-07-13 13:05:10.466  INFO 15120 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2021-07-13 13:05:10.474  INFO 15120 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082 - deregister  status: 200
+2021-07-13 13:05:10.550  INFO 15120 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2021-07-13 13:05:10.866  INFO 15120 --- [restartedMain] c.example.demo.IssuesServiceApplication  : Starting IssuesServiceApplication using Java 15.0.2 on DESKTOP-BKHCO08 with PID 15120 (C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service\target\classes started by nilay in C:\Users\nilay\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\issues-service)
+2021-07-13 13:05:10.868  INFO 15120 --- [restartedMain] c.example.demo.IssuesServiceApplication  : No active profile set, falling back to default profiles: default
+2021-07-13 13:05:11.594  INFO 15120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-07-13 13:05:11.604  INFO 15120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 1 MongoDB repository interfaces.
+2021-07-13 13:05:11.689  INFO 15120 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f7b7b508-bd08-389d-aa3e-b80124254285
+2021-07-13 13:05:11.776  INFO 15120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2021-07-13 13:05:11.777  INFO 15120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-13 13:05:11.777  INFO 15120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-13 13:05:11.874  INFO 15120 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-07-13 13:05:11.874  INFO 15120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 991 ms
+2021-07-13 13:05:11.969  INFO 15120 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-07-13 13:05:11.973  INFO 15120 --- [cluster-ClusterId{value='60ed422f98d96b4da1c99421', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:8, serverValue:60}] to localhost:27017
+2021-07-13 13:05:11.973  INFO 15120 --- [cluster-rtt-ClusterId{value='60ed422f98d96b4da1c99421', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:9, serverValue:61}] to localhost:27017
+2021-07-13 13:05:11.974  INFO 15120 --- [cluster-ClusterId{value='60ed422f98d96b4da1c99421', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1687900}
+2021-07-13 13:05:11.978  WARN 15120 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-13 13:05:12.002  WARN 15120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2021-07-13 13:05:12.026  WARN 15120 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-13 13:05:12.463  INFO 15120 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-07-13 13:05:12.490  INFO 15120 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-13 13:05:12.808  INFO 15120 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2021-07-13 13:05:12.836  WARN 15120 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2021-07-13 13:05:12.864  INFO 15120 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2021-07-13 13:05:12.886  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2021-07-13 13:05:12.886  INFO 15120 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-13 13:05:12.898  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2021-07-13 13:05:12.899  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2021-07-13 13:05:12.899  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2021-07-13 13:05:12.899  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2021-07-13 13:05:12.899  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2021-07-13 13:05:12.899  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2021-07-13 13:05:12.899  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2021-07-13 13:05:13.057  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2021-07-13 13:05:13.063  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2021-07-13 13:05:13.069  INFO 15120 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-07-13 13:05:13.081  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1626161713081 with initial instances count: 1
+2021-07-13 13:05:13.081  INFO 15120 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ISSUE-SERVIE with eureka with status UP
+2021-07-13 13:05:13.082  INFO 15120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1626161713082, current=UP, previous=STARTING]
+2021-07-13 13:05:13.082  INFO 15120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082: registering service...
+2021-07-13 13:05:13.086  INFO 15120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2021-07-13 13:05:13.087  INFO 15120 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2021-07-13 13:05:13.251  INFO 15120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082 - registration status: 204
+2021-07-13 13:05:13.298  INFO 15120 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-07-13 13:05:13.299  INFO 15120 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-07-13 13:05:13.308  INFO 15120 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-07-13 13:05:13.452  INFO 15120 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2021-07-13 13:05:13.458  INFO 15120 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2021-07-13 13:05:13.499  INFO 15120 --- [restartedMain] c.example.demo.IssuesServiceApplication  : Started IssuesServiceApplication in 2.868 seconds (JVM running for 269.147)
+2021-07-13 13:05:13.506  INFO 15120 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-13 13:05:17.600  WARN 15120 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=issue-servie, managementUrl=http://DESKTOP-BKHCO08.mshome.net:8082/actuator, healthUrl=http://DESKTOP-BKHCO08.mshome.net:8082/actuator/health, serviceUrl=http://DESKTOP-BKHCO08.mshome.net:8082/) at spring-boot-admin ([http://admin:admin@localhost:8888//instances]): I/O error on POST request for "http://admin:admin@localhost:8888/instances": Connect to localhost:8888 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8888 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information. Further attempts are logged on DEBUG level
+2021-07-13 13:05:25.161  INFO 15120 --- [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-07-13 13:05:25.162  INFO 15120 --- [RMI TCP Connection(18)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ISSUE-SERVIE with eureka with status DOWN
+2021-07-13 13:05:25.163  INFO 15120 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1626161725163, current=DOWN, previous=UP]
+2021-07-13 13:05:25.163  INFO 15120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082: registering service...
+2021-07-13 13:05:25.170  INFO 15120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082 - registration status: 204
+2021-07-13 13:05:25.196  INFO 15120 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2021-07-13 13:05:28.230  INFO 15120 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2021-07-13 13:05:28.237  INFO 15120 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ISSUE-SERVIE/DESKTOP-BKHCO08:issue-servie:8082 - deregister  status: 200
+2021-07-13 13:05:28.363  INFO 15120 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
