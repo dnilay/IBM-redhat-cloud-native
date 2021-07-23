@@ -1,0 +1,3 @@
+com\example\demo\TraineeServiceApplication.class
+com\example\demo\model\Trainee.class
+com\example\demo\dao\TrainerRepository.class
